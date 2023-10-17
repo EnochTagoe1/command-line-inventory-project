@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Fender Stratocaster Guitar",
+    "priceInCents": 250000,
+    "id": "8008",
+    "colour": "Sunburst"
+  },
+  {
+    "name": "Gibson Les Paul Guitar",
+    "priceInCents": 280000,
+    "id": "8663",
+    "colour": "Cherry Burst"
+  },
+  {
+    "name": "Yamaha Upright Piano",
+    "priceInCents": 800000,
+    "id":"1098",
+    "colour": "Black"
+  },
+  {
+    "name": "flute",
+    "id": "gvBZ",
+    "colour": "blue",
+    "priceInCents": "8500"
+  }
+]
