@@ -2,7 +2,7 @@
   {
     "name": "Fender Stratocaster Guitar",
     "priceInCents": 250000,
-    "id": "8008",
+    "id": "",
     "colour": "Sunburst"
   },
   {
@@ -13,14 +13,8 @@
   },
   {
     "name": "Yamaha Upright Piano",
-    "priceInCents": 800000,
-    "id":"1098",
+    "priceInCents": "50000",
+    "id": "1098",
     "colour": "Black"
-  },
-  {
-    "name": "flute",
-    "id": "gvBZ",
-    "colour": "blue",
-    "priceInCents": "8500"
   }
 ]

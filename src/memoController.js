@@ -15,7 +15,7 @@ function create(memobilia, itemName, color, price) {
     console.log("check", instrumentId)
     const instrument = memobilia.find((instrument) => instrument.id === instrumentId);
     //console.log(instrument)
-    return instrument.id + ' ' + instrument.name + ' ' + instrument.color + ' instrument.price';
+    return instrument.id + ' ' + instrument.name + ' ' + instrument.colour + ' instrument.price';
   }
 
   const inform = console.log;
@@ -32,18 +32,24 @@ function destroy(memobilia, instrumentId) {
   }
 }
 
-function edit(memobilia, instrumentId, updatedInstrument) {
+function edit(memobilia, instrumentId, updatedPrice) {
   const index = memobilia.findIndex((instrument) => instrument.id === instrumentId);
   if (index > -1) {
-    instrument[index].id = instrumentId;
-    memobilia[index].name = updatedInstrument;
-   // animals[index].points = animalPoints[updatedAnimal] || 10;
+    memobilia[index].priceInCents = updatedPrice
+    // instrument[index].id = instrumentId;
+    // memobilia[index].name = updatedInstrument;
+   // memobilia[index].points = instrumentPoints[updated] || 10;
     inform('Instrument successfully updated');
     return memobilia;
   } else {
     inform('Instrument not found. No action taken');
     return memobilia;
   }
+
+  function cart(memobilia) {
+    return memobilia.reduce((acc, current) => acc + current.priceInCents, 0);
+  }
+
 }
 
   module.exports = {
@@ -51,5 +57,6 @@ function edit(memobilia, instrumentId, updatedInstrument) {
     index, 
     show, 
     destroy, 
-    edit,
+    edit,      
+    score,
   };

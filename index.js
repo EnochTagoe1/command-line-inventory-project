@@ -1,10 +1,12 @@
 const { readJSONFile, writeJSONFile } = require('./src/helpers');
 
-const { create, index, show, destroy, edit, } = require('./src/memoController');
+const { create, index, show, destroy, edit, score, } = require('./src/memoController');
 // create an alias called inform to store the console.log function
 // When providing employee feedback in the terminal use `inform`
 // When developing/debugging use `console.log`
 const inform = console.log;
+
+
 
 const memobilia = readJSONFile('./data', 'memobilia.json');
 //console.log("check", memobilia)
@@ -37,18 +39,18 @@ function run() {
       inform(completeMemobiliaView);
       break;
     case 'update':
-      updatedMemobilia = edit(memobilia, instrument, process.argv[4]);
+      updatedMemobilia = edit(memobilia, process.argv[3], process.argv[4]);
    writeToFile = true;
       break;
     case 'destroy':
-      updatedMemobilia = destroy(memobilia, instrument);
+      updatedMemobilia = destroy(memobilia, itemName);
    writeToFile = true;
       break;
-    // case 'score':
-    //   inform(action);
-    //   break;
-    // default:
-    //   inform('There was an error.');
+    case 'score':
+      inform(`Current points sum of all memobilia you've added to your database`, score(memobilia));
+      break;
+    default:
+      inform('There was an error.');
   }
   if (writeToFile) {
     writeJSONFile('./data', 'memobilia.json', updatedMemobilia);
